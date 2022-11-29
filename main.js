@@ -8,6 +8,8 @@ function getComputerChoice () {
     //test
     console.log("Computer: " + choice);
 
+    //return choice value to use later
+    return choice;
 }
 
 //player choice
@@ -29,11 +31,21 @@ function getPlayerChoice () {
     }
     
     //test
-    console.log("Player: " + pickOne);
+    //console.log("Player: " + pickOne);
+
+    //return choice value to use later
+    return pickOne;
 }
 
 //play single round
+function playRound() {
+    console.log(playerSelection);
+    console.log(computerSelection);
+}
+
+//parameters for function playRound
+let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice();
 
 //test
-getPlayerChoice();
-getComputerChoice();
+playRound();
