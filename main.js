@@ -12,7 +12,7 @@ function getComputerChoice () {
     return choice;
 }
 
-//player choice
+//player choice ///fix bug with wrong input/double entry read
 function getPlayerChoice () {
     //user input
     let pickOne = prompt("Your turn. Rock, Paper or Scissors?");
@@ -69,5 +69,13 @@ function playRound() {
         console.log("something misssing");
     }
 }
-//test
-playRound();
+
+//play 5 rounds
+function playFiveRounds() {
+    for (i = 0; i < 4; i++) {
+        playRound();
+    }
+}
+
+//run program
+playFiveRounds();
