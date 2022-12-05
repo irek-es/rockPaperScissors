@@ -49,7 +49,7 @@ function playRound() {
         playRound();
     } else if (playerSelection === "Paper") {
         if (computerSelection === "Rock") {
-            console.log("User win. Paper wrap rock.");
+            console.log("Player win. Paper wrap rock.");
             playerWin();
         } else {
             console.log("Computer win. Scissors cut paper.");
@@ -60,7 +60,7 @@ function playRound() {
             console.log("Computer win. Paper wrap rock.");
             computerWin();
         } else {
-            console.log("User win. Rock nick scissors.");
+            console.log("Player win. Rock nick scissors.");
             playerWin();
         }
     } else if (playerSelection === "Scissors") {
@@ -90,14 +90,34 @@ function computerWin() {
     computerScore++;
 }
 
+function declareWinner() {
+    if (playerScore > computerScore) {
+        console.log("PLAYER WON COMPETITION");
+        console.log("Score:");
+        console.log("Player: " + playerScore);
+        console.log("Computer: " + computerScore);
+    } else {
+        console.log("COMPUTER WON COMPETITION");
+        console.log("Score:");
+        console.log("Computer: " + computerScore);
+        console.log("Player: " + playerScore);
+    }
+}
+
 //play 5 rounds
 function playFiveRounds() {
-    for (i = 0; i < 5; i++) {
-        //test 
-        console.log(playerScore);
-        console.log(computerScore);
-        playRound();
+    //play 5 games, 6 iteration for declaring winner
+    for (i = 0; i < 6; i++) {
+        //declare winner after 5 games
+        if (i === 5) {
+            declareWinner();
+        } else {
+            //test
+            console.log("Round: " + (parseInt(i) + 1));
+            playRound();
+        }
     }
+
 }
 
 //run program
