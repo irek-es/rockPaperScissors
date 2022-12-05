@@ -50,29 +50,52 @@ function playRound() {
     } else if (playerSelection === "Paper") {
         if (computerSelection === "Rock") {
             console.log("User win. Paper wrap rock.");
+            playerWin();
         } else {
             console.log("Computer win. Scissors cut paper.");
+            computerWin();
         }
     } else if (playerSelection === "Rock") {
         if (computerSelection === "Paper") {
             console.log("Computer win. Paper wrap rock.");
+            computerWin();
         } else {
             console.log("User win. Rock nick scissors.");
+            playerWin();
         }
     } else if (playerSelection === "Scissors") {
         if (computerSelection === "Rock") {
             console.log("Computer win. Rock nick scissors.");
+            computerWin();
         } else {
             console.log("Player win. Scissors cut paper.");
+            playerWin();
         }
     } else {
         console.log("something misssing");
     }
 }
 
+//results
+let playerScore = 0;
+let computerScore = 0;
+
+//point for player
+function playerWin() {
+    playerScore++;
+}
+
+//point for computer
+function computerWin() {
+    computerScore++;
+}
+
 //play 5 rounds
 function playFiveRounds() {
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 5; i++) {
+        //test 
+        console.log(playerScore);
+        console.log(computerScore);
         playRound();
     }
 }
